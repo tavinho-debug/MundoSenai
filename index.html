@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DS - SENAI</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind Config for SENAI Colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        senai: {
+                            red: '#E3000F',
+                            darkred: '#B3000B',
+                            blue: '#002776',
+                            dark: '#0F172A',
+                            light: '#F8FAFC'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Background Pattern for Hero */
+        .bg-tech-pattern {
+            background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+        
+        /* Gradient text */
+        .text-gradient {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(to right, #ffffff, #cbd5e1);
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-800 bg-senai-light antialiased selection:bg-senai-red selection:text-white">
+
+    <!-- Navbar -->
+    <header class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-200 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer">
+                    <div class="w-10 h-10 bg-senai-red flex items-center justify-center rounded-lg shadow-lg">
+                        <i class="fa-solid fa-graduation-cap text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <span class="font-bold text-2xl tracking-tight text-senai-dark">SENAI</span>
+                        <span class="block text-xs font-semibold text-senai-red uppercase tracking-wider mt-[-4px]">Desenvolvimento de Sistemas</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#inicio" class="text-sm font-semibold text-slate-600 hover:text-senai-red transition-colors">Início</a>
+                    <a href="#sobre" class="text-sm font-semibold text-slate-600 hover:text-senai-red transition-colors">O Curso</a>
+                    <a href="#modulos" class="text-sm font-semibold text-slate-600 hover:text-senai-red transition-colors">Módulos</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-senai-red focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
+            <div class="px-4 pt-2 pb-6 space-y-1 shadow-xl">
+                <a href="#inicio" class="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-senai-red hover:bg-gray-50">Início</a>
+                <a href="#sobre" class="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-senai-red hover:bg-gray-50">O Curso</a>
+                <a href="#modulos" class="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-senai-red hover:bg-gray-50">Módulos</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-senai-dark">
+        <!-- Background decorative elements -->
+        <div class="absolute inset-0 bg-tech-pattern opacity-20"></div>
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-senai-red blur-3xl opacity-20 mix-blend-screen"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-blue-600 blur-3xl opacity-20 mix-blend-screen"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Text Content -->
+                <div class="text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-senai-light text-xs font-semibold uppercase tracking-wider mb-6">
+                        <span class="w-2 h-2 rounded-full bg-senai-red animate-pulse"></span>
+                        Vagas Abertas - Turma 2024
+                    </div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
+                        Transforme Dados em <span class="text-transparent bg-clip-text bg-gradient-to-r from-senai-red to-orange-400">Decisões.</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-slate-300 mb-8 max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
+                        Torne-se o profissional mais requisitado do mercado com o curso de formação em <strong>Data Science</strong> do SENAI. Domine Python, IA e Análise de Dados.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#modulos" class="bg-senai-red hover:bg-senai-darkred text-white px-8 py-4 rounded-lg font-bold text-lg transition-all shadow-[0_0_20px_rgba(227,0,15,0.4)] hover:shadow-[0_0_30px_rgba(227,0,15,0.6)] flex items-center justify-center gap-2">
+                            Ver Grade Curricular <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="#sobre" class="bg-white/10 hover:bg-white/20 border border-white/20 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all backdrop-blur-sm flex items-center justify-center">
+                            Conhecer o Curso
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Graphic/Visual -->
+                <div class="relative hidden lg:block">
+                    <div class="relative rounded-2xl bg-gradient-to-tr from-slate-800 to-slate-900 border border-slate-700 shadow-2xl p-2 transform rotate-2 hover:rotate-0 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-r from-senai-red to-blue-600 rounded-2xl blur opacity-30 -z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Dashboard de Análise de Dados" class="rounded-xl opacity-90 mix-blend-luminosity hover:mix-blend-normal transition-all duration-700">
+                        
+                        <!-- Floating Badges -->
+                        <div class="absolute -left-6 top-10 bg-white p-4 rounded-xl shadow-xl animate-bounce" style="animation-duration: 3s;">
+                            <i class="fa-brands fa-python text-3xl text-blue-900"></i>
+                        </div>
+                        <div class="absolute -right-6 bottom-20 bg-white p-4 rounded-xl shadow-xl animate-bounce" style="animation-duration: 4s; animation-delay: 1s;">
+                            <i class="fa-solid fa-chart-pie text-3xl text-senai-red"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre o Curso Section -->
+    <section id="sobre" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-senai-red font-bold tracking-wide uppercase text-sm mb-2">Por que escolher o SENAI?</h2>
+                <h3 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">O Futuro é Movido a Dados</h3>
+                <p class="text-lg text-slate-600">O curso de Especialização em Data Science do SENAI foi desenhado com as necessidades reais da Indústria 4.0. Aprenda na prática, com ferramentas modernas e foco na empregabilidade.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-xl transition-shadow duration-300 group">
+                    <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-senai-red transition-colors duration-300">
+                        <i class="fa-solid fa-laptop-code text-2xl text-senai-blue group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">Mão na Massa</h4>
+                    <p class="text-slate-600">A metodologia SENAI privilegia o "aprender fazendo". Construa um portfólio real desde a primeira semana de aula resolvendo problemas de empresas.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-xl transition-shadow duration-300 group">
+                    <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-senai-red transition-colors duration-300">
+                        <i class="fa-solid fa-network-wired text-2xl text-senai-blue group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">Conexão com a Indústria</h4>
+                    <p class="text-slate-600">O conteúdo é validado por grandes players do mercado. Aprenda as tecnologias que estão gerando mais vagas de emprego no Brasil e no mundo.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-xl transition-shadow duration-300 group">
+                    <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-senai-red transition-colors duration-300">
+                        <i class="fa-solid fa-certificate text-2xl text-senai-blue group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">Certificação Reconhecida</h4>
+                    <p class="text-slate-600">Um diploma SENAI tem peso na indústria. Seja reconhecido por sua excelência técnica e pela capacidade de gerar insights estratégicos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Módulos / Grade Curricular Section -->
+    <section id="modulos" class="py-20 bg-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-senai-red font-bold tracking-wide uppercase text-sm mb-2">Grade Curricular</h2>
+                <h3 class="text-3xl md:text-4xl font-extrabold text-white mb-4">Módulos do Curso</h3>
+                <p class="text-lg text-slate-400 max-w-2xl mx-auto">Uma trilha de aprendizagem completa, indo desde a base de programação até algoritmos avançados de Inteligência Artificial.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Card 1: Python -->
+                <div class="bg-slate-800 rounded-xl overflow-hidden border border-slate-700 hover:border-senai-red/50 hover:shadow-[0_0_15px_rgba(227,0,15,0.2)] transition-all duration-300 group relative">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-blue-400"></div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h4 class="text-xl font-bold text-white">Linguagem Python</h4>
+                            <i class="fa-brands fa-python text-3xl text-slate-400 group-hover:text-blue-400 transition-colors"></i>
+                        </div>
+                        <p class="text-sm text-slate-400 mb-4">A base da ciência de dados. Lógica de programação, estruturas de dados, orientação a objetos e manipulação de arquivos.</p>
+                        <ul class="space-y-2 text-sm text-slate-300">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-senai-red"></i> Lógica e Sintaxe</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-senai-red"></i> Bibliotecas Pandas e NumPy</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-senai-red"></i> Limpeza e Tratamento de Dados</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 2: Banco de Dados -->
+                <div class="bg-slate-800 rounded-xl overflow-hidden border border-slate-700 hover:border-senai-red/50 hover:shadow-[0_0_15px_rgba(227,0,15,0.2)] transition-all duration-300 group relative">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-green-500 to-emerald-400"></div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h4 class="text-xl font-bold text-white">Banco de Dados (SQL)</h4>
+                            <i class="fa-solid fa-database text-3xl text-slate-400 group-hover:text-green-400 transition-colors"></i>
+                        </div>
+                        <p class="text-sm text-slate-400 mb-4">Onde os dados vivem. Aprenda a modelar, armazenar e realizar consultas complexas em bancos de dados relacionais e NoSQL.</p>
+                        <ul class="space-y-2 text-sm text-slate-300">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-senai-red"></i> Modelagem de Dados</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-senai-red"></i> Consultas SQL Avançadas</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-senai-red"></i> PostgreSQL e MongoDB</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 3: Análise de Dados -->
+                <div class="bg-slate-800 rounded-xl overflow-hidden border border-slate-700 hover:border-senai-red/50 hover:shadow-[0_0_15px_rgba(227,0,15,0.2)] transition-all duration-300 group relative">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-purple-400"></div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h4 class="text-xl font-bold text-white">Análise Exploratória</h4>
+                            <i class="fa-solid fa-chart-line text-3xl text-slate-400 group-hover:text-purple-400 transition-colors"></i>
+                        </div>
+                        <p class="text-sm text-slate-400 mb-4">Estatística aplicada. Compreenda distribuições, tendências, correlações e crie visualizações ricas usando Matplotlib e Seaborn.</p>
+                        <ul class="space-y-2 text-sm text-slate-300">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-senai-red"></i> Estatística Descritiva</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-senai-red"></i> Visualização de Dados (Gráficos)</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-senai-red"></i> Identificação de Outliers (Anomalias)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 4: Machine Learning -->
+                <div class="bg-slate-800 rounded-xl overflow-hidden border border-slate-700 hover:border-senai-red/50 hover:shadow-[0_0_15px_rgba(227,0,15,0.2)] transition-all duration-300 group relative">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-senai-red to-orange-500"></div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h4 class="text-xl font-bold text-white">Machine Learning</h4>
+                            <i class="fa-solid fa-brain text-3xl text-slate-400 group-hover:text-senai-red transition-colors"></i>
+                        </div>
+                        <p class="text-sm text-slate-400 mb-4">Crie modelos preditivos. Ensine máquinas a aprender padrões usando algoritmos de classificação, regressão e clusterização.</p>
+                        <ul class="space-y-2 text-sm text-slate-300">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-senai-red"></i> Scikit-Learn</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-senai-red"></i> Modelos Supervisionados</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-senai-red"></i> Redes Neurais Básicas</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 5: Power BI / Dashboards -->
+                <div class="bg-slate-800 rounded-xl overflow-hidden border border-slate-700 hover:border-senai-red/50 hover:shadow-[0_0_15px_rgba(227,0,15,0.2)] transition-all duration-300 group relative">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-yellow-500 to-yellow-400"></div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h4 class="text-xl font-bold text-white">Power BI e BI</h4>
+                            <i class="fa-solid fa-chart-simple text-3xl text-slate-400 group-hover:text-yellow-400 transition-colors"></i>
+                        </div>
+                        <p class="text-sm text-slate-400 mb-4">Apresentação de resultados. Crie dashboards interativos e profissionais para contar histórias com dados e embasar decisões de negócios.</p>
+                        <ul class="space-y-2 text-sm text-slate-300">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-senai-red"></i> DAX e ETL no Power BI</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-senai-red"></i> Dashboards Interativos</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-senai-red"></i> Data Storytelling</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Card 6: Projeto Final -->
+                <div class="bg-gradient-to-br from-senai-dark to-slate-800 rounded-xl overflow-hidden border border-slate-700 hover:border-senai-red/50 transition-all duration-300 group relative flex flex-col justify-center items-center text-center p-6">
+                    <div class="w-16 h-16 bg-senai-red/20 rounded-full flex items-center justify-center mb-4">
+                        <i class="fa-solid fa-rocket text-2xl text-senai-red"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-2">Projeto TCC prático</h4>
+                    <p class="text-sm text-slate-400">Desenvolva uma solução fim a fim para um problema real da indústria como seu trabalho de conclusão.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-senai-dark border-t border-slate-800 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                
+                <!-- Logo & About -->
+                <div class="col-span-1 md:col-span-1">
+                    <div class="flex items-center gap-2 mb-6">
+                        <div class="w-8 h-8 bg-senai-red flex items-center justify-center rounded shadow-sm">
+                            <i class="fa-solid fa-graduation-cap text-white text-sm"></i>
+                        </div>
+                        <span class="font-bold text-xl tracking-tight text-white">SENAI</span>
+                    </div>
+                    <p class="text-slate-400 text-sm mb-6">Excelência em educação profissional e inovação tecnológica para a Indústria Brasileira.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-senai-red hover:text-white transition-colors"><i class="fa-brands fa-linkedin-in text-sm"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-senai-red hover:text-white transition-colors"><i class="fa-brands fa-instagram text-sm"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-senai-red hover:text-white transition-colors"><i class="fa-brands fa-youtube text-sm"></i></a>
+                    </div>
+                </div>
+
+                <!-- Links -->
+                <div>
+                    <h4 class="text-white font-semibold mb-4 uppercase text-sm tracking-wider">O Curso</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#sobre" class="text-slate-400 hover:text-senai-red text-sm transition-colors">Sobre a Área</a></li>
+                        <li><a href="#modulos" class="text-slate-400 hover:text-senai-red text-sm transition-colors">Metodologia</a></li>
+                        <li><a href="#modulos" class="text-slate-400 hover:text-senai-red text-sm transition-colors">Corpo Docente</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-semibold mb-4 uppercase text-sm tracking-wider">Links Úteis</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-slate-400 hover:text-senai-red text-sm transition-colors">Portal do Aluno</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-senai-red text-sm transition-colors">Edital e Vagas</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-senai-red text-sm transition-colors">Fale Conosco</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-white font-semibold mb-4 uppercase text-sm tracking-wider">Contato</h4>
+                    <ul class="space-y-3 text-sm text-slate-400">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot mt-1 text-senai-red"></i>
+                            <span>Unidade Escola SENAI<br>Av. Paulista, São Paulo - SP</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-senai-red"></i>
+                            <span>(11) 3322-1100</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-senai-red"></i>
+                            <span>datascience@sp.senai.br</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-500 text-sm text-center md:text-left">
+                    &copy; 2024 Serviço Nacional de Aprendizagem Industrial - SENAI. Todos os direitos reservados.
+                </p>
+                <div class="flex gap-4">
+                    <span class="text-slate-600 text-xs">Página demonstrativa</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script for mobile menu -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            const links = menu.querySelectorAll('a');
+
+            // Toggle menu
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+                const icon = btn.querySelector('i');
+                if (menu.classList.contains('hidden')) {
+                    icon.classList.remove('fa-xmark');
+                    icon.classList.add('fa-bars');
+                } else {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-xmark');
+                }
+            });
+
+            // Close menu on link click
+            links.forEach(link => {
+                link.addEventListener('click', () => {
+                    menu.classList.add('hidden');
+                    const icon = btn.querySelector('i');
+                    icon.classList.remove('fa-xmark');
+                    icon.classList.add('fa-bars');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
